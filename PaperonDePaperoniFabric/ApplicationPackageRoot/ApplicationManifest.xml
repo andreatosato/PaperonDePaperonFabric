@@ -2,9 +2,15 @@
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="PaperonDePaperoniFabricType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="PaperonDePaperoni.Web_InstanceCount" DefaultValue="1" />
-    <Parameter Name="QuiQuoQuaActorService_PartitionCount" DefaultValue="10" />
-    <Parameter Name="QuiQuoQuaActorService_MinReplicaSetSize" DefaultValue="3" />
-    <Parameter Name="QuiQuoQuaActorService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="QuaActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="QuaActorService_MinReplicaSetSize" DefaultValue="1" />
+    <Parameter Name="QuaActorService_TargetReplicaSetSize" DefaultValue="1" />
+    <Parameter Name="QuiActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="QuiActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="QuiActorService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="QuoActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="QuoActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="QuoActorService_TargetReplicaSetSize" DefaultValue="3" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 
@@ -33,9 +39,19 @@
         <SingletonPartition />
       </StatelessService>
     </Service>
-    <Service Name="QuiQuoQuaActorService" GeneratedIdRef="eba9a5f0-c8f0-4e38-b42e-75bd2b698513|Persisted">
-      <StatefulService ServiceTypeName="QuoActorServiceType" TargetReplicaSetSize="[QuiQuoQuaActorService_TargetReplicaSetSize]" MinReplicaSetSize="[QuiQuoQuaActorService_MinReplicaSetSize]">
-        <UniformInt64Partition PartitionCount="[QuiQuoQuaActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+    <Service Name="QuaActorService" GeneratedIdRef="2d653ccb-ce47-4bfe-98b5-e3bf517ce0b9|None">
+      <StatefulService ServiceTypeName="QuaActorServiceType" TargetReplicaSetSize="[QuaActorService_TargetReplicaSetSize]" MinReplicaSetSize="[QuaActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[QuaActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="QuiActorService" GeneratedIdRef="f963c173-5179-40de-97a2-f65ea99ab527|Persisted">
+      <StatefulService ServiceTypeName="QuiActorServiceType" TargetReplicaSetSize="[QuiActorService_TargetReplicaSetSize]" MinReplicaSetSize="[QuiActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[QuiActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="QuoActorService" GeneratedIdRef="48433fae-b604-494a-a0ac-c6c0b657e9c1|Volatile">
+      <StatefulService ServiceTypeName="QuoActorServiceType" TargetReplicaSetSize="[QuoActorService_TargetReplicaSetSize]" MinReplicaSetSize="[QuoActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[QuoActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
       </StatefulService>
     </Service>
   </DefaultServices>

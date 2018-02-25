@@ -37,6 +37,7 @@ namespace PaperonDePaperoni.Web
 
                         return new WebHostBuilder()
                                     .UseKestrel()
+                                    .UseEnvironment("Development")
                                     .ConfigureServices(
                                         services => services
                                             .AddSingleton<StatelessServiceContext>(serviceContext))

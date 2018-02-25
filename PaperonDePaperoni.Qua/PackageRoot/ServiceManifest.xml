@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="PaperonDePaperoni.QuaPkg" Version="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <ServiceTypes>
-    <StatefulServiceType ServiceTypeName="QuaActorServiceType" HasPersistedState="true">
+    <StatefulServiceType ServiceTypeName="QuaActorServiceType">
       <Extensions>
-        <Extension Name="__GeneratedServiceType__" GeneratedId="772d9818-dc19-4dac-a980-50e3254f225e|Persisted">
+        <Extension Name="__GeneratedServiceType__" GeneratedId="2d653ccb-ce47-4bfe-98b5-e3bf517ce0b9|None">
           <GeneratedNames xmlns="http://schemas.microsoft.com/2015/03/fabact-no-schema">
-            <DefaultService Name="QuiQuoQuaActorService" />
+            <DefaultService Name="QuaActorService" />
             <ReplicatorEndpoint Name="QuaActorServiceReplicatorEndpoint" />
             <ReplicatorConfigSection Name="QuaActorServiceReplicatorConfig" />
             <ReplicatorSecurityConfigSection Name="QuaActorServiceReplicatorSecurityConfig" />
