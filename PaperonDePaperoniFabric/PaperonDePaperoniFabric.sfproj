@@ -32,10 +32,12 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PaperonDePaperoni.BandaBassotti\PaperonDePaperoni.BandaBassotti.csproj" />
     <ProjectReference Include="..\PaperonDePaperoni.Qua\PaperonDePaperoni.Qua.csproj" />
     <ProjectReference Include="..\PaperonDePaperoni.Qui\PaperonDePaperoni.Qui.csproj" />
     <ProjectReference Include="..\PaperonDePaperoni.Quo\PaperonDePaperoni.Quo.csproj" />
     <ProjectReference Include="..\PaperonDePaperoni.Web\PaperonDePaperoni.Web.csproj" />
+    <ProjectReference Include="..\PaperonDePaperoni.ZioPaperone\PaperonDePaperoni.ZioPaperone.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>

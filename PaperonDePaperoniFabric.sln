@@ -5,15 +5,25 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "PaperonDePaperoniFabric", "PaperonDePaperoniFabric\PaperonDePaperoniFabric.sfproj", "{F40332CC-D36B-4FF9-A052-7BD37C8C271D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Web", "PaperonDePaperoni.Web\PaperonDePaperoni.Web.csproj", "{FBF59C69-9177-4A53-A0BA-AF5F6AD12141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.Web", "PaperonDePaperoni.Web\PaperonDePaperoni.Web.csproj", "{FBF59C69-9177-4A53-A0BA-AF5F6AD12141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Qui", "PaperonDePaperoni.Qui\PaperonDePaperoni.Qui.csproj", "{42B10E7F-7F08-45F0-8681-9325B5DC552D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.Qui", "PaperonDePaperoni.Qui\PaperonDePaperoni.Qui.csproj", "{42B10E7F-7F08-45F0-8681-9325B5DC552D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.QuiQuoQua.Interfaces", "PaperonDePaperoni.Qui.Interfaces\PaperonDePaperoni.QuiQuoQua.Interfaces.csproj", "{9A2D250D-F953-43BA-A334-38AC4C330DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.QuiQuoQua.Interfaces", "PaperonDePaperoni.Qui.Interfaces\PaperonDePaperoni.QuiQuoQua.Interfaces.csproj", "{9A2D250D-F953-43BA-A334-38AC4C330DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Quo", "PaperonDePaperoni.Quo\PaperonDePaperoni.Quo.csproj", "{3C8EAFC9-8A31-47AB-91A7-CCB161A87CB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.Quo", "PaperonDePaperoni.Quo\PaperonDePaperoni.Quo.csproj", "{3C8EAFC9-8A31-47AB-91A7-CCB161A87CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Qua", "PaperonDePaperoni.Qua\PaperonDePaperoni.Qua.csproj", "{D3F69E52-4956-40C7-A8A9-6165ED6EC034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.Qua", "PaperonDePaperoni.Qua\PaperonDePaperoni.Qua.csproj", "{D3F69E52-4956-40C7-A8A9-6165ED6EC034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.ZioPaperone", "PaperonDePaperoni.ZioPaperone\PaperonDePaperoni.ZioPaperone.csproj", "{EF088C91-7555-437C-B74E-5337C06BBB83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.ZioPaperone.Interfaces", "PaperonDePaperoni.ZioPaperone.Interfaces\PaperonDePaperoni.ZioPaperone.Interfaces.csproj", "{DBD3F586-528C-4482-BFFD-03596B0AAB8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.BandaBassotti", "PaperonDePaperoni.BandaBassotti\PaperonDePaperoni.BandaBassotti.csproj", "{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.BandaBassotti.Interfaces", "PaperonDePaperoni.BandaBassotti.Interfaces\PaperonDePaperoni.BandaBassotti.Interfaces.csproj", "{37288032-C684-40BD-B803-3C164783D174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Models", "PaperonDePaperoni.Models\PaperonDePaperoni.Models.csproj", "{B31D91A2-C8E1-4E72-9E4D-F344E687357C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +81,46 @@ Global
 		{D3F69E52-4956-40C7-A8A9-6165ED6EC034}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D3F69E52-4956-40C7-A8A9-6165ED6EC034}.Release|x64.ActiveCfg = Release|Any CPU
 		{D3F69E52-4956-40C7-A8A9-6165ED6EC034}.Release|x64.Build.0 = Release|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Debug|x64.Build.0 = Debug|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Release|x64.ActiveCfg = Release|Any CPU
+		{EF088C91-7555-437C-B74E-5337C06BBB83}.Release|x64.Build.0 = Release|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Debug|x64.Build.0 = Debug|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Release|x64.ActiveCfg = Release|Any CPU
+		{DBD3F586-528C-4482-BFFD-03596B0AAB8D}.Release|x64.Build.0 = Release|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Debug|x64.Build.0 = Debug|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Release|x64.ActiveCfg = Release|Any CPU
+		{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}.Release|x64.Build.0 = Release|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Debug|x64.Build.0 = Debug|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Release|x64.ActiveCfg = Release|Any CPU
+		{37288032-C684-40BD-B803-3C164783D174}.Release|x64.Build.0 = Release|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Debug|x64.Build.0 = Debug|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Release|x64.ActiveCfg = Release|Any CPU
+		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
