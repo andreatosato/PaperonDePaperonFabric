@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.ServiceFabric.Actors;
 using Microsoft.ServiceFabric.Actors.Client;
+using PaperonDePaperoni.Bank.Interfaces;
 using PaperonDePaperoni.QuiQuoQua.Interfaces;
 using PaperonDePaperoni.Web.Models;
 
@@ -15,11 +16,9 @@ namespace PaperonDePaperoni.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private static ActorId QuiActorId = new ActorId("Qui");
-        private static ActorId QuoActorId = new ActorId("Quo");
-        private static ActorId QuaActorId = new ActorId("Qua"); 
+        private static ActorId BankActorId = new ActorId("Bank");
         private StatelessServiceContext _statelessServiceContext;
-
+        
         public HomeController(StatelessServiceContext statelessServiceContext)
         {
             _statelessServiceContext = statelessServiceContext;
@@ -27,9 +26,10 @@ namespace PaperonDePaperoni.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            IQui qui = ActorProxy.Create<IQui>(QuiActorId, 
-                $"{_statelessServiceContext.CodePackageActivationContext.ApplicationName}");
-            await qui.UpdateMoneyAsync(10.5m, CancellationToken.None);
+            IBank bank = ActorProxy.Create<IBank>(BankActorId,
+               $"{_statelessServiceContext.CodePackageActivationContext.ApplicationName}");
+
+            await bank.DepositToPaperonDePaperoniAsync(10.6m);
             return View();
         }
 

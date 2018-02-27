@@ -10,7 +10,7 @@ namespace PaperonDePaperoni.Models
     {
         public string BankAccount { get; set; }
         public string IBAN { get; set; }
-        public List<BankRecords> Records { get; set; }
+        public List<BankRecords> Records { get; set; } = new List<BankRecords>();
     }
 
     /// <summary>

@@ -18,8 +18,8 @@ namespace PaperonDePaperoni.Bank.Interfaces
     /// </summary>
     public interface IBank : IActor
     {
-        Task DepositToPaperonDePaperoni(IZioPaperone zioPaperone, IBandaBassotti bandaBassotti, decimal money);
+        Task DepositToPaperonDePaperoniAsync(decimal money);
 
-        Task StealFromPaperonDePaperoni(IZioPaperone zioPaperone, IBandaBassotti bandaBassotti, decimal money);
+        Task StealFromPaperonDePaperoni(decimal money);
     }
 }

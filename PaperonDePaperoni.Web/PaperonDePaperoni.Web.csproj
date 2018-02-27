@@ -19,7 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PaperonDePaperoni.BandaBassotti.Interfaces\PaperonDePaperoni.BandaBassotti.Interfaces.csproj" />
+    <ProjectReference Include="..\PaperonDePaperoni.Bank.Interfaces\PaperonDePaperoni.Bank.Interfaces.csproj" />
     <ProjectReference Include="..\PaperonDePaperoni.Qui.Interfaces\PaperonDePaperoni.QuiQuoQua.Interfaces.csproj" />
+    <ProjectReference Include="..\PaperonDePaperoni.ZioPaperone.Interfaces\PaperonDePaperoni.ZioPaperone.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

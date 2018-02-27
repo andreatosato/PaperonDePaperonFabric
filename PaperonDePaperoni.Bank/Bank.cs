@@ -23,6 +23,10 @@ namespace PaperonDePaperoni.Bank
     [StatePersistence(StatePersistence.Persisted)]
     internal class Bank : Actor, IBank
     {
+        private static ActorId ZioPaperoneActorId = new ActorId("ZioPaperone");
+        private static ActorId BandaBassottiActorId = new ActorId("BandaBassotti");
+        private IZioPaperone _zioPaperone;
+        private IBandaBassotti _bandaBassotti;
         /// <summary>
         /// Initializes a new instance of Bank
         /// </summary>
@@ -33,16 +37,26 @@ namespace PaperonDePaperoni.Bank
         {
         }
 
-        public async Task DepositToPaperonDePaperoni(IZioPaperone zioPaperone, IBandaBassotti bandaBassotti, decimal money)
+        protected override async Task OnActivateAsync()
         {
-            await zioPaperone.MoreMoneyAsync(money);
-            await bandaBassotti.LessMoneyAsync(money);
+            await base.OnActivateAsync();
+            _zioPaperone = ActorProxy.Create<IZioPaperone>(ZioPaperoneActorId,
+               $"{ActorService.Context.CodePackageActivationContext.ApplicationName}");
+
+            _bandaBassotti = ActorProxy.Create<IBandaBassotti>(BandaBassottiActorId,
+                $"{ActorService.Context.CodePackageActivationContext.ApplicationName}");
+        }
+
+        public async Task DepositToPaperonDePaperoniAsync(decimal money)
+        {
+            await _zioPaperone.MoreMoneyAsync(money);
+            await _bandaBassotti.LessMoneyAsync(money);
         }
         
-        public async Task StealFromPaperonDePaperoni(IZioPaperone zioPaperone, IBandaBassotti bandaBassotti, decimal money)
+        public async Task StealFromPaperonDePaperoni(decimal money)
         {
-            await zioPaperone.LessMoneyAsync(money);
-            await bandaBassotti.MoreMoneyAsync(money);
+            await _zioPaperone.LessMoneyAsync(money);
+            await _bandaBassotti.MoreMoneyAsync(money);
         }
     }
 }
