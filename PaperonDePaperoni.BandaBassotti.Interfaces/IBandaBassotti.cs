@@ -12,8 +12,14 @@ namespace PaperonDePaperoni.BandaBassotti.Interfaces
 {
     public interface IBandaBassotti : IActor
     {
-        Task MoreMoney(decimal money);
+        Task MoreMoneyAsync(decimal money);
         
-        Task LessMoney(decimal money);
+        Task LessMoneyAsync(decimal money);
+
+        /// <summary>
+        /// Restituisce i soldi in banca
+        /// </summary>
+        /// <returns></returns>
+        Task<decimal> GetMoneyAsync();
     }
 }

@@ -17,10 +17,16 @@
     <Parameter Name="ZioPaperoneActorService_PartitionCount" DefaultValue="10" />
     <Parameter Name="ZioPaperoneActorService_MinReplicaSetSize" DefaultValue="3" />
     <Parameter Name="ZioPaperoneActorService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="BankActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="BankActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="BankActorService_TargetReplicaSetSize" DefaultValue="3" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 
        ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="PaperonDePaperoni.BankPkg" ServiceManifestVersion="1.0.0" />
+  </ServiceManifestImport>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="PaperonDePaperoni.BandaBassottiPkg" ServiceManifestVersion="1.0.0" />
   </ServiceManifestImport>
@@ -74,6 +80,11 @@
     <Service Name="ZioPaperoneActorService" GeneratedIdRef="c41cb4f9-6298-499a-a2c2-44d998a4558b|Persisted">
       <StatefulService ServiceTypeName="ZioPaperoneActorServiceType" TargetReplicaSetSize="[ZioPaperoneActorService_TargetReplicaSetSize]" MinReplicaSetSize="[ZioPaperoneActorService_MinReplicaSetSize]">
         <UniformInt64Partition PartitionCount="[ZioPaperoneActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="BankActorService" GeneratedIdRef="d5763250-3e8b-43b1-b1ec-c3e31756ed94|Persisted">
+      <StatefulService ServiceTypeName="BankActorServiceType" TargetReplicaSetSize="[BankActorService_TargetReplicaSetSize]" MinReplicaSetSize="[BankActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[BankActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
       </StatefulService>
     </Service>
   </DefaultServices>

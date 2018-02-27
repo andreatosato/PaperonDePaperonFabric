@@ -8,6 +8,7 @@ using Microsoft.ServiceFabric.Actors.Runtime;
 using Microsoft.ServiceFabric.Actors.Client;
 using PaperonDePaperoni.BandaBassotti.Interfaces;
 using PaperonDePaperoni.Models;
+using System.Transactions;
 
 namespace PaperonDePaperoni.BandaBassotti
 {
@@ -35,36 +36,57 @@ namespace PaperonDePaperoni.BandaBassotti
         {
         }
 
-        protected override Task OnActivateAsync()
+        protected override async Task OnActivateAsync()
         {
             ActorEventSource.Current.ActorMessage(this, "Actor activated.");
-
-            // The StateManager is this actor's private state store.
-            // Data stored in the StateManager will be replicated for high-availability for actors that use volatile or persisted state storage.
-            // Any serializable object can be saved in the StateManager.
-            // For more information, see https://aka.ms/servicefabricactorsstateserialization
-
-            return this.StateManager.TryAddStateAsync("count", 0);
+            await this.StateManager.TryAddStateAsync("count", 0);
         }
 
-        public async Task LessMoney(decimal money)
+        public async Task LessMoneyAsync(decimal money)
         {
-            if(!await StateManager.ContainsStateAsync(CurrentMoney))
+            if(money < 0)
+                throw new InvalidOperationException("Importo negativo non gestito. Inserire un valore positivo");
+
+            await AddMoneyAsync(-money);
+        }
+
+        public async Task MoreMoneyAsync(decimal money)
+        {
+            if (money < 0)
+                throw new InvalidOperationException("Importo negativo non gestito. Inserire un valore positivo");
+            await AddMoneyAsync(money);
+        }
+
+        public async Task<decimal> GetMoneyAsync()
+        {
+            return await StateManager.GetStateAsync<decimal>(CurrentMoney);
+        }
+
+        public async Task<AccountBalance> GetAccountBalanceAsync()
+        {
+            return await StateManager.GetStateAsync<AccountBalance>(AccountBalance);
+        }
+
+        private async Task AddMoneyAsync(decimal money)
+        {
+            AccountBalance accountBalance;
+            if (!await StateManager.ContainsStateAsync(CurrentMoney))
             {
-                AccountBalance accountBalance = new AccountBalance();
+                accountBalance = new AccountBalance();
                 await StateManager.AddStateAsync<AccountBalance>(AccountBalance, accountBalance);
                 await StateManager.AddStateAsync<decimal>(CurrentMoney, money);
             }
             else
             {
-                AccountBalance accountBalance = await StateManager.GetStateAsync<AccountBalance>(AccountBalance);
-                await StateManager.SetStateAsync<decimal>(CurrentMoney, money);
+                accountBalance = await StateManager.GetStateAsync<AccountBalance>(AccountBalance);
+                decimal currentBalance = accountBalance.Records.Sum(x => x.CurrentMoney);
+                await StateManager.SetStateAsync<decimal>(CurrentMoney, currentBalance + money);
             }
-        }
-
-        public Task MoreMoney(decimal money)
-        {
-            throw new NotImplementedException();
+            accountBalance.Records.Add(new BankRecords
+            {
+                CurrentMoney = money,
+                Date = DateTime.UtcNow
+            });
         }
     }
 }

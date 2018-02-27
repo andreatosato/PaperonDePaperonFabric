@@ -17,5 +17,8 @@
     <Parameter Name="ZioPaperoneActorService_PartitionCount" Value="1" />
     <Parameter Name="ZioPaperoneActorService_TargetReplicaSetSize" Value="1" />
     <Parameter Name="ZioPaperoneActorService_MinReplicaSetSize" Value="1" />
+    <Parameter Name="BankActorService_PartitionCount" Value="1" />
+    <Parameter Name="BankActorService_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="BankActorService_MinReplicaSetSize" Value="1" />
   </Parameters>
 </Application>

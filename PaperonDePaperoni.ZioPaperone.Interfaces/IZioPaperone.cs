@@ -12,8 +12,8 @@ namespace PaperonDePaperoni.ZioPaperone.Interfaces
 {
     public interface IZioPaperone : IActor
     {
-        Task MoreMoney(decimal money);
+        Task MoreMoneyAsync(decimal money);
 
-        Task LessMoney(decimal money);
+        Task LessMoneyAsync(decimal money);
     }
 }

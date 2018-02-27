@@ -19,6 +19,12 @@ namespace PaperonDePaperoni.QuiQuoQua.Interfaces
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task UpdateMoneyAsync(decimal money, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Restituisce i soldi in banca
+        /// </summary>
+        /// <returns></returns>
+        Task<decimal> GetMoneyAsync();
     }
 
     public interface IQuo : IActor
@@ -30,6 +36,12 @@ namespace PaperonDePaperoni.QuiQuoQua.Interfaces
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task UpdateMoneyAsync(decimal money, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Restituisce i soldi in banca
+        /// </summary>
+        /// <returns></returns>
+        Task<decimal> GetMoneyAsync();
     }
 
     public interface IQua : IActor
@@ -41,5 +53,11 @@ namespace PaperonDePaperoni.QuiQuoQua.Interfaces
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task UpdateMoneyAsync(decimal money, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Restituisce i soldi in banca
+        /// </summary>
+        /// <returns></returns>
+        Task<decimal> GetMoneyAsync();
     }
 }

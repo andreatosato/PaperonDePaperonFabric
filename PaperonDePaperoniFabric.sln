@@ -15,15 +15,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.Quo", "Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.Qua", "PaperonDePaperoni.Qua\PaperonDePaperoni.Qua.csproj", "{D3F69E52-4956-40C7-A8A9-6165ED6EC034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.ZioPaperone", "PaperonDePaperoni.ZioPaperone\PaperonDePaperoni.ZioPaperone.csproj", "{EF088C91-7555-437C-B74E-5337C06BBB83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.ZioPaperone", "PaperonDePaperoni.ZioPaperone\PaperonDePaperoni.ZioPaperone.csproj", "{EF088C91-7555-437C-B74E-5337C06BBB83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.ZioPaperone.Interfaces", "PaperonDePaperoni.ZioPaperone.Interfaces\PaperonDePaperoni.ZioPaperone.Interfaces.csproj", "{DBD3F586-528C-4482-BFFD-03596B0AAB8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.ZioPaperone.Interfaces", "PaperonDePaperoni.ZioPaperone.Interfaces\PaperonDePaperoni.ZioPaperone.Interfaces.csproj", "{DBD3F586-528C-4482-BFFD-03596B0AAB8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.BandaBassotti", "PaperonDePaperoni.BandaBassotti\PaperonDePaperoni.BandaBassotti.csproj", "{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.BandaBassotti", "PaperonDePaperoni.BandaBassotti\PaperonDePaperoni.BandaBassotti.csproj", "{E6FBD17C-A77D-40A1-B5B6-70EB80DD60FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.BandaBassotti.Interfaces", "PaperonDePaperoni.BandaBassotti.Interfaces\PaperonDePaperoni.BandaBassotti.Interfaces.csproj", "{37288032-C684-40BD-B803-3C164783D174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.BandaBassotti.Interfaces", "PaperonDePaperoni.BandaBassotti.Interfaces\PaperonDePaperoni.BandaBassotti.Interfaces.csproj", "{37288032-C684-40BD-B803-3C164783D174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Models", "PaperonDePaperoni.Models\PaperonDePaperoni.Models.csproj", "{B31D91A2-C8E1-4E72-9E4D-F344E687357C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaperonDePaperoni.Models", "PaperonDePaperoni.Models\PaperonDePaperoni.Models.csproj", "{B31D91A2-C8E1-4E72-9E4D-F344E687357C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Bank", "PaperonDePaperoni.Bank\PaperonDePaperoni.Bank.csproj", "{89E15189-798A-4B2F-9CC9-8545F3D381A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperonDePaperoni.Bank.Interfaces", "PaperonDePaperoni.Bank.Interfaces\PaperonDePaperoni.Bank.Interfaces.csproj", "{1450A2C8-F34E-4C13-BB63-043F887DC56B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +125,22 @@ Global
 		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Release|x64.ActiveCfg = Release|Any CPU
 		{B31D91A2-C8E1-4E72-9E4D-F344E687357C}.Release|x64.Build.0 = Release|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Debug|x64.Build.0 = Debug|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Release|x64.ActiveCfg = Release|Any CPU
+		{89E15189-798A-4B2F-9CC9-8545F3D381A2}.Release|x64.Build.0 = Release|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Debug|x64.Build.0 = Debug|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Release|x64.ActiveCfg = Release|Any CPU
+		{1450A2C8-F34E-4C13-BB63-043F887DC56B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

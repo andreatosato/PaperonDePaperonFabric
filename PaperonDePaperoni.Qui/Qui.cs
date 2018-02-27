@@ -37,5 +37,10 @@ namespace PaperonDePaperoni.Qui
             ActorEventSource.Current.ActorMessage(this, $"Id Attore Persistence: {this.Id}, imposto {money} money");
             await StateManager.SetStateAsync(MoneyState, money, cancellationToken);
         }
+
+        public async Task<decimal> GetMoneyAsync()
+        {
+            return await StateManager.GetStateAsync<decimal>(MoneyState);
+        }
     }
 }
