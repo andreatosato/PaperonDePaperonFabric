@@ -35,7 +35,7 @@ namespace PaperonDePaperoni.Quo
         public async Task UpdateMoneyAsync(decimal money, CancellationToken cancellationToken)
         {
             ActorEventSource.Current.ActorMessage(this, $"Id Attore Volatile: {this.Id}, imposto {money} money");
-            await StateManager.SetStateAsync(MoneyState, money, cancellationToken);
+            await StateManager.SetStateAsync<decimal>(MoneyState, money, cancellationToken);
         }
 
         public async Task<decimal> GetMoneyAsync()

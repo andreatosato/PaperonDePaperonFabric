@@ -15,5 +15,7 @@ namespace PaperonDePaperoni.ZioPaperone.Interfaces
         Task MoreMoneyAsync(decimal money);
 
         Task LessMoneyAsync(decimal money);
+
+        Task<decimal> GetMoneyAsync();
     }
 }
