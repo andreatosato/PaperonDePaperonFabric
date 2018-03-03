@@ -39,7 +39,8 @@ namespace PaperonDePaperoni.BandaBassotti
         protected override async Task OnActivateAsync()
         {
             ActorEventSource.Current.ActorMessage(this, "Actor activated.");
-            await this.StateManager.TryAddStateAsync("count", 0);
+            await StateManager.TryAddStateAsync(CurrentMoney, 0m);
+            await StateManager.TryAddStateAsync(AccountBalance, new AccountBalance());
         }
 
         public async Task LessMoneyAsync(decimal money)
@@ -69,19 +70,10 @@ namespace PaperonDePaperoni.BandaBassotti
 
         private async Task AddMoneyAsync(decimal money)
         {
-            AccountBalance accountBalance;
-            if (!await StateManager.ContainsStateAsync(CurrentMoney))
-            {
-                accountBalance = new AccountBalance();
-                await StateManager.AddStateAsync<AccountBalance>(AccountBalance, accountBalance);
-                await StateManager.AddStateAsync<decimal>(CurrentMoney, money);
-            }
-            else
-            {
-                accountBalance = await StateManager.GetStateAsync<AccountBalance>(AccountBalance);
-                decimal currentBalance = accountBalance.Records.Sum(x => x.CurrentMoney);
-                await StateManager.SetStateAsync<decimal>(CurrentMoney, currentBalance + money);
-            }
+            AccountBalance accountBalance = await StateManager.GetStateAsync<AccountBalance>(AccountBalance);
+            decimal currentBalance = accountBalance.Records.Sum(x => x.CurrentMoney);
+            await StateManager.SetStateAsync<decimal>(CurrentMoney, currentBalance + money);
+         
             accountBalance.Records.Add(new BankRecords
             {
                 CurrentMoney = money,

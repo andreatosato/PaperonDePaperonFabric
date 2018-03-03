@@ -29,6 +29,8 @@ namespace PaperonDePaperoni.ZioPaperone
         protected override async Task OnActivateAsync()
         {
             ActorEventSource.Current.ActorMessage(this, $"Actor {ActorService.Context.ServiceName} activated.");
+            await StateManager.TryAddStateAsync(AccountBalance, new AccountBalance());
+            await StateManager.TryAddStateAsync(CurrentMoney, 0m);
         }
 
         public async Task LessMoneyAsync(decimal money)
@@ -55,19 +57,10 @@ namespace PaperonDePaperoni.ZioPaperone
 
         private async Task AddMoneyAsync(decimal money)
         {
-            AccountBalance accountBalance;
-            if (!await StateManager.ContainsStateAsync(CurrentMoney))
-            {
-                accountBalance = new AccountBalance();
-                await StateManager.AddStateAsync<AccountBalance>(AccountBalance, accountBalance);
-                await StateManager.AddStateAsync<decimal>(CurrentMoney, money);
-            }
-            else
-            {
-                accountBalance = await StateManager.GetStateAsync<AccountBalance>(AccountBalance);
-                decimal currentBalance = accountBalance.Records.Sum(x => x.CurrentMoney);
-                await StateManager.SetStateAsync<decimal>(CurrentMoney, currentBalance + money);
-            }
+            AccountBalance accountBalance = await StateManager.GetStateAsync<AccountBalance>(AccountBalance);
+            decimal currentBalance = accountBalance.Records.Sum(x => x.CurrentMoney);
+            await StateManager.SetStateAsync<decimal>(CurrentMoney, currentBalance + money);
+            
             accountBalance.Records.Add(new BankRecords
             {
                 CurrentMoney = money,

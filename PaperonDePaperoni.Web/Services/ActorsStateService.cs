@@ -34,14 +34,21 @@ namespace PaperonDePaperoni.Web.Services
         public async Task<CurrentActorState> GetActorsStatus()
         {
             string applicationName = _statelessServiceContext.CodePackageActivationContext.ApplicationName;
-            var result = new CurrentActorState
-            {
-                ZioPaperone = await _zioPaperone.GetMoneyAsync(),
-                BandaBassotti = await _bandaBassotti.GetMoneyAsync(),
-                Qui = await _qui.GetMoneyAsync(),
-                Quo = await _quo.GetMoneyAsync(),
-                Qua = await _qua.GetMoneyAsync()
-            };
+            //var result = new CurrentActorState
+            //{
+            //    ZioPaperone = await _zioPaperone.GetMoneyAsync(),
+            //    BandaBassotti = await _bandaBassotti.GetMoneyAsync(),
+            //    Qui = await _qui.GetMoneyAsync(),
+            //    Quo = await _quo.GetMoneyAsync(),
+            //    Qua = await _qua.GetMoneyAsync()
+            //};
+
+            var result = new CurrentActorState();
+            result.ZioPaperone = await _zioPaperone.GetMoneyAsync();
+            result.BandaBassotti = await _bandaBassotti.GetMoneyAsync();
+            result.Qui = await _qui.GetMoneyAsync();
+            result.Quo = await _quo.GetMoneyAsync();
+            result.Qua = await _qua.GetMoneyAsync();
             return result;
         }
     }

@@ -23,7 +23,7 @@ namespace PaperonDePaperoni.Qui
         protected override Task OnActivateAsync()
         {
             ActorEventSource.Current.ActorMessage(this, "Actor activated. Persistence");
-            return this.StateManager.TryAddStateAsync(MoneyState, 0);
+            return this.StateManager.TryAddStateAsync(MoneyState, 0m);
         }
 
         protected override Task OnDeactivateAsync()
@@ -35,7 +35,8 @@ namespace PaperonDePaperoni.Qui
         public async Task UpdateMoneyAsync(decimal money, CancellationToken cancellationToken)
         {
             ActorEventSource.Current.ActorMessage(this, $"Id Attore Persistence: {this.Id}, imposto {money} money");
-            await StateManager.SetStateAsync<decimal>(MoneyState, money, cancellationToken);
+            decimal currentMoney = await StateManager.GetStateAsync<decimal>(MoneyState);
+            await StateManager.SetStateAsync<decimal>(MoneyState, currentMoney + money, cancellationToken);
         }
 
         public async Task<decimal> GetMoneyAsync()

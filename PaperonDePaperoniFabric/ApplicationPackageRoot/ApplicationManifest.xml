@@ -3,8 +3,8 @@
   <Parameters>
     <Parameter Name="PaperonDePaperoni.Web_InstanceCount" DefaultValue="1" />
     <Parameter Name="QuaActorService_PartitionCount" DefaultValue="10" />
-    <Parameter Name="QuaActorService_MinReplicaSetSize" DefaultValue="1" />
-    <Parameter Name="QuaActorService_TargetReplicaSetSize" DefaultValue="1" />
+    <Parameter Name="QuaActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="QuaActorService_TargetReplicaSetSize" DefaultValue="3" />
     <Parameter Name="QuiActorService_PartitionCount" DefaultValue="10" />
     <Parameter Name="QuiActorService_MinReplicaSetSize" DefaultValue="3" />
     <Parameter Name="QuiActorService_TargetReplicaSetSize" DefaultValue="3" />

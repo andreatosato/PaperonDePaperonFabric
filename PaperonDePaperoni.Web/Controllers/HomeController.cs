@@ -22,8 +22,6 @@ namespace PaperonDePaperoni.Web.Controllers
         private static ActorId BankActorId = new ActorId("Bank");
         private StatelessServiceContext _statelessServiceContext;
         private readonly IBank _bank;
-        private readonly IZioPaperone _zioPaperone;
-        private readonly IBandaBassotti _bandaBassotti;
         private readonly IActorsStateService _actorService;
 
         public HomeController(StatelessServiceContext statelessServiceContext, IActorsStateService actorStateService)
@@ -35,7 +33,8 @@ namespace PaperonDePaperoni.Web.Controllers
         }
 
         public async Task<IActionResult> Index()
-        { 
+        {
+
             return View(new BankChangesViewModel()
             {
                 CurrenteActorState = await GetStatusAsync(),
@@ -53,9 +52,12 @@ namespace PaperonDePaperoni.Web.Controllers
                 if(changesViewModel.Withdraw > 0)
                     await _bank.StealFromPaperonDePaperoni(changesViewModel.Withdraw);
                 changesViewModel.CurrenteActorState = await GetStatusAsync();
+                changesViewModel.Deposit = 0;
+                changesViewModel.Withdraw = 0;
                 return View("Index", changesViewModel);
             }
-            return View("Index");
+            changesViewModel.CurrenteActorState = await GetStatusAsync();
+            return View("Index", changesViewModel);
         }
         
         public IActionResult Error()
