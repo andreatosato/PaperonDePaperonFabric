@@ -1,7 +1,7 @@
 # Global Azure Bootcamp 2018 - Service Fabric
 Paperon de paperoni - Azure Service Fabric
 
-![](https://github.com/andreatosato/PaperonDePaperonFabric/raw/master/images/Dashboard.png | width=200)
+![Dashboard](https://github.com/andreatosato/PaperonDePaperonFabric/raw/master/images/Dashboard.png)
 
 ![](https://github.com/andreatosato/PaperonDePaperonFabric/raw/master/images/DopoStart.png | width=200)
 ![](https://github.com/andreatosato/PaperonDePaperonFabric/raw/master/images/Nodi_Qua.png | width=200)
