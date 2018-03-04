@@ -29,4 +29,4 @@ Dopo il riavvio del nodo Qua, Service Fabric cambia il nodo principale dell'atto
 
 La situazione finale, dopo lo spegnimento del nodo 4, ci fa capire la persistenza dello stato dell'attore QUA.
 
-![](https://github.com/andreatosato/PaperonDePaperonFabric/raw/master/images/DopoRestart.png | width=200)
+![Situazione Finale](https://github.com/andreatosato/PaperonDePaperonFabric/raw/master/images/DopoRestart.png)
